@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="asset/css/main.css">
+  <title>Пополнение - SKY POKER</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      position: relative;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Расположить на заднем плане */
+      pointer-events: none; /* Чтобы элементы на заднем плане не перекрывали клики */
+    }
+
+    .falling-object {
+      position: absolute;
+      top: -100px; /* Увеличить верхний отступ для появления объектов полностью */
+      width: 70px;
+      height: 60px;
+      background-size: contain; /* Убедитесь, что изображение полностью умещается в блоке */
+      background-repeat: no-repeat;
+      opacity: 1;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px);
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    .phone-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .phone-container .phone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      text-align: center;
+      
+    }
+
+    .phone-container .phone img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .phone-container .phone .btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #506afc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .phone-container .phone .btn:hover {
+      background-color: #4050c8;
+    }
+
+    .replenishment-content h1,
+    .replenishment-content p {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .replenishment-content h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #506afc;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    .replenishment-content p {
+      font-size: 1.2em;
+      color: #ffffff; /* Изменен цвет текста */
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #506afc, 0 0 20px #506afc, 0 0 30px #506afc;
+      }
+      to {
+        text-shadow: 0 0 20px #4050c8, 0 0 30px #4050c8, 0 0 40px #4050c8;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .header__nav.centered {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .header__nav a {
+      background-color: #506afc;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .header__nav a:hover {
+      background-color: #4050c8;
+    }
+
+    .header__container {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0; /* Добавлено, чтобы убрать лишние отступы */
+    }
+
+    @media (min-width: 768px) {
+      .phone-container {
+        flex-wrap: nowrap;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .phone-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .phone-container .phone {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background"></div>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container container">
+        <nav class="header__nav centered">
+          <a href="index.html" class="btn main-btn">Главная</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main__container container">
+        <div class="replenishment-content">
+          <h1>Пополнение счета</h1>
+          <p>Добро пожаловать в раздел пополнения счета! Здесь вы можете пополнить свой баланс и воспользоваться нашими выгодными бонусами и акциями.</p>
+          
+          <div class="phone-container">
+            <div class="phone">
+              <img src="/image/telephonepppoker.png" alt="Phone 1">
+              <a href="https://paymentsystem.cc/select/buy/chips" class="btn">Пополнить</a>
+            </div>
+            <div class="phone">
+              <img src="/image/telephonxpoker.png" alt="Phone 2">
+              <a href="index.html#contacts" class="btn">Пополнить</a>
+            </div>
+            <div class="phone">
+              <img src="/image/telephonsuprema.png" alt="Phone 3">
+              <a href="index.html#contacts" class="btn">Пополнить</a>
+            </div>
+            <div class="phone">
+              <img src="/image/kkpokertelephonelogo.png" alt="Phone 4">
+              <a href="https://chipbuy.cc/" target="_blank" class="btn">Пополнить</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container container">
+        <p>&copy; 2024 SKY POKER. Все права защищены.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="asset/js/app.js"></script>
+  <script>
+    function createFallingObject() {
+      const object = document.createElement('div');
+      object.classList.add('falling-object');
+      object.style.left = Math.random() * window.innerWidth + 'px';
+      object.style.animationDuration = (Math.random() * 8 + 4) + 's'; // Случайная продолжительность анимации от 4 до 12 секунд
+
+      // Используйте ваши изображения вместо фона
+      const images = [
+        '/image/$1.png',
+        '/image/$2.png',
+        '/image/$3.png'
+      ];
+      const randomImage = images[Math.floor(Math.random() * images.length)];
+      object.style.backgroundImage = `url(${randomImage})`;
+
+      document.querySelector('.background').appendChild(object);
+
+      object.addEventListener('animationend', () => {
+        object.remove();
+      });
+    }
+
+    setInterval(createFallingObject, 500); // Создаем новый объект каждые 500 миллисекунд
+  </script>
+</body>
+
+</html>
